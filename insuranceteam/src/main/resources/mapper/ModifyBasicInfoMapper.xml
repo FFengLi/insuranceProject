@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.guet.insuranceteam.mapper.ModifyBasicInfoMapper">
+
+    <resultMap id="BaseResultMap" type="cn.edu.guet.insuranceteam.bean.ModifyBasicInfo">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="prefecture" column="prefecture" jdbcType="VARCHAR"/>
+            <result property="county" column="county" jdbcType="VARCHAR"/>
+            <result property="modifyProjectName" column="modify_project_name" jdbcType="TIMESTAMP"/>
+            <result property="estimatedMaintainTotalCost" column="estimated_maintain_total_ cost" jdbcType="VARCHAR"/>
+            <result property="scheduledDate" column="scheduled_date" jdbcType="TIMESTAMP"/>
+            <result property="expectedCompletionTime" column="expected_completion_time" jdbcType="TIMESTAMP"/>
+            <result property="governmentInterfacer" column="government_ interfacer" jdbcType="VARCHAR"/>
+            <result property="governmentInterfacerCif" column="government_interfacer_cif" jdbcType="VARCHAR"/>
+            <result property="ourInterfacer" column="our_ interfacer" jdbcType="VARCHAR"/>
+            <result property="ourInterfacerCif" column="our_interfacer_cif" jdbcType="VARCHAR"/>
+            <result property="discussSchedule" column="discuss_schedule" jdbcType="VARCHAR"/>
+            <result property="actualCompletionTime" column="actual_completion_time" jdbcType="TIMESTAMP"/>
+            <result property="compensationCosts" column="compensation_costs" jdbcType="VARCHAR"/>
+            <result property="wireMaintainCosts" column="wire_maintain_costs" jdbcType="VARCHAR"/>
+            <result property="otherBudgetName" column="other_budget_name" jdbcType="VARCHAR"/>
+            <result property="otherBudgetId" column="other_budget_id" jdbcType="VARCHAR"/>
+            <result property="maintainBudgetName" column="maintain_budget_name" jdbcType="VARCHAR"/>
+            <result property="compensationSchedule" column="compensation_schedule" jdbcType="VARCHAR"/>
+            <result property="itemDescribe" column="item_describe" jdbcType="VARCHAR"/>
+            <result property="unresolvedResultAnalysis" column="unresolved_result_analysis" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,prefecture,county,
+        modify_project_name,estimated_maintain_total_ cost,scheduled_date,
+        expected_completion_time,government_ interfacer,government_interfacer_cif,
+        our_ interfacer,our_interfacer_cif,discuss_schedule,
+        actual_completion_time,compensation_costs,wire_maintain_costs,
+        other_budget_name,other_budget_id,maintain_budget_name,
+        compensation_schedule,item_describe,unresolved_result_analysis
+    </sql>
+</mapper>
