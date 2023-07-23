@@ -11,4 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface InsuranceListService extends IService<InsuranceList> {
     ResponseData createInsurance(InsuranceList insuranceList);
+
+    ResponseData deleteInsurance(InsuranceList insuranceList);
 }

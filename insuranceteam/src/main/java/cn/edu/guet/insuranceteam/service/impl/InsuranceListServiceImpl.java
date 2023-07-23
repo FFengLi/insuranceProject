@@ -1,12 +1,16 @@
 package cn.edu.guet.insuranceteam.service.impl;
 
 import cn.edu.guet.insuranceteam.common.ResponseData;
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import cn.edu.guet.insuranceteam.bean.InsuranceList;
 import cn.edu.guet.insuranceteam.service.InsuranceListService;
 import cn.edu.guet.insuranceteam.mapper.InsuranceListMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 /**
  * @author 罗云之
@@ -27,6 +31,18 @@ public class InsuranceListServiceImpl extends ServiceImpl<InsuranceListMapper, I
         } else
             return ResponseData.fail("创建失败！");
     }
+
+    @Override
+    public ResponseData deleteInsurance(InsuranceList insuranceList) {
+
+        int result = insuranceListMapper.deleteById(insuranceList.getInsuranceId());
+        if (result==1){
+            return ResponseData.ok("删除成功！");
+        }
+        else return ResponseData.fail("删除失败");
+    }
+
+
 }
 
 

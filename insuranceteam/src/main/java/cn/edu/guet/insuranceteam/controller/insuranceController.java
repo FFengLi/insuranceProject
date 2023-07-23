@@ -33,10 +33,14 @@ public class insuranceController {
 
     @PostMapping("/createInsurance")
     public ResponseData createInsurance(@RequestBody InsuranceList insuranceList){
-        System.out.println(insuranceList);
         return insuranceListService.createInsurance(insuranceList);
     }
 
+
+    @PostMapping("/deleteInsurance")
+    public ResponseData deleteInsurance(@RequestBody InsuranceList insuranceList){
+        return insuranceListService.deleteInsurance(insuranceList);
+    }
 
 }
 
