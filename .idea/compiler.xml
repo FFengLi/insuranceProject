@@ -11,7 +11,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="insuranceProject" target="8" />
-      <module name="insuranceteam" target="1.8" />
+      <module name="insuranceteam" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
