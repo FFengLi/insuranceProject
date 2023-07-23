@@ -14,13 +14,19 @@ public class insuranceController {
     private InsuranceListService insuranceListService;
 
     @GetMapping("/getList")
-    public ResponseData getList(int id){
-        InsuranceList insuranceList=insuranceListService.getById(id);
+    public ResponseData getList(int id) {
+        InsuranceList insuranceList = insuranceListService.getById(id);
         return ResponseData.ok(insuranceList);
     }
+
     @GetMapping("/getList1")
     public ResponseData getList1(int id){
         InsuranceList insuranceList=insuranceListService.getById(id);
         return ResponseData.ok(insuranceList);
+
+
+    @GetMapping("insuranceSummary")
+    public ResponseData insuranceSummary(int id) {
+        return null;
     }
 }
