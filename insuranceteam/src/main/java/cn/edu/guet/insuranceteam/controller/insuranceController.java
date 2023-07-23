@@ -18,4 +18,9 @@ public class insuranceController {
         InsuranceList insuranceList=insuranceListService.getById(id);
         return ResponseData.ok(insuranceList);
     }
+    @GetMapping("/getList1")
+    public ResponseData getList1(int id){
+        InsuranceList insuranceList=insuranceListService.getById(id);
+        return ResponseData.ok(insuranceList);
+    }
 }
