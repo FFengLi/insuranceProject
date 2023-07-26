@@ -1,20 +1,18 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Main from "@/components/Index.vue";
-import Header from "@/components/index/Header.vue";
+import VueRouter from 'vue-router';
+import Transfer from "@/views/Transfer.vue";
+import Insurance from "@/views/Insurance.vue";
 
 Vue.use(VueRouter)
 
 const routes = [
     {
-        path: '/main',
-        name: 'main',
-        component: Main
+        path: '/insurance',
+        component: Insurance
     },
     {
-        path: '/head',
-        name:'head',
-        component: Header
+        path: '/transfer',
+        component: Transfer
     }
 ]
 
