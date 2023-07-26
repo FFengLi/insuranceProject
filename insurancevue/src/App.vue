@@ -1,6 +1,8 @@
 <template>
     <div id="app">
-        <Main></Main>
+        <router-link to="/insurance">保险清单  </router-link>
+        <router-link to="/transfer">  迁改清单</router-link>
+        <router-view/>
     </div>
 </template>
 
@@ -10,13 +12,9 @@
 </style>
 
 <script>
-import Main from "@/components/Index.vue";
 
 export default {
     name: 'App',
-    components: {
-        Main,
-    },
 }
 
 </script>
