@@ -1,7 +1,9 @@
 package cn.edu.guet.insuranceteam.service;
 
 import cn.edu.guet.insuranceteam.bean.InsuranceList;
+import cn.edu.guet.insuranceteam.common.ResponseData;
 import com.baomidou.mybatisplus.extension.service.IService;
+import sun.security.x509.RDN;
 
 /**
 * @author 罗云之
@@ -9,5 +11,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 * @createDate 2023-07-23 01:47:57
 */
 public interface InsuranceListService extends IService<InsuranceList> {
-
+    ResponseData insuranceSummary();
 }
