@@ -4,10 +4,12 @@ package cn.edu.guet.insuranceteam.bean;
 import com.alibaba.excel.annotation.ExcelProperty;
 import com.alibaba.excel.annotation.write.style.ColumnWidth;
 
+import java.math.BigDecimal;
+
 public class InsuranceSummaryModel {
 
     @ExcelProperty(value = "地州")
-    @ColumnWidth(20)
+    @ColumnWidth(14)
     private String prefecture;
 
     @ExcelProperty(value = "总数量")
@@ -15,56 +17,56 @@ public class InsuranceSummaryModel {
     private int total;
 
     @ExcelProperty(value = "1月")
-    @ColumnWidth(10)
+    @ColumnWidth(7)
     private int january;
 
     @ExcelProperty(value = "2月")
-    @ColumnWidth(10)
+    @ColumnWidth(7)
     private int february;
 
     @ExcelProperty(value = "3月")
-    @ColumnWidth(10)
+    @ColumnWidth(7)
     private int march;
 
     @ExcelProperty(value = "4月")
-    @ColumnWidth(10)
+    @ColumnWidth(7)
     private int april;
 
     @ExcelProperty(value = "5月")
-    @ColumnWidth(10)
+    @ColumnWidth(7)
     private int may;
 
     @ExcelProperty(value = "6月")
-    @ColumnWidth(10)
+    @ColumnWidth(7)
     private int june;
 
     @ExcelProperty(value = "7月")
-    @ColumnWidth(10)
+    @ColumnWidth(7)
     private int july;
 
     @ExcelProperty(value = "8月")
-    @ColumnWidth(10)
+    @ColumnWidth(7)
     private int august;
 
     @ExcelProperty(value = "9月")
-    @ColumnWidth(10)
+    @ColumnWidth(7)
     private int september;
 
     @ExcelProperty(value = "10月")
-    @ColumnWidth(10)
+    @ColumnWidth(7)
     private int october;
 
     @ExcelProperty(value = "11月")
-    @ColumnWidth(10)
+    @ColumnWidth(7)
     private int november;
 
     @ExcelProperty(value = "12月")
-    @ColumnWidth(10)
+    @ColumnWidth(7)
     private int december;
 
     @ExcelProperty(value = "总金额（元）")
-    @ColumnWidth(30)
-    private float totalAmount;
+    @ColumnWidth(20)
+    private BigDecimal totalAmount;
 
 
 
@@ -180,11 +182,11 @@ public class InsuranceSummaryModel {
         this.december = december;
     }
 
-    public float getTotalAmount() {
+    public BigDecimal getTotalAmount() {
         return totalAmount;
     }
 
-    public void setTotalAmount(float totalAmount) {
+    public void setTotalAmount(BigDecimal totalAmount) {
         this.totalAmount = totalAmount;
     }
 }

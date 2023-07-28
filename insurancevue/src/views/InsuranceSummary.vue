@@ -278,7 +278,7 @@ export default {
       tableData.push(newTotalRows)
       console.log(tableData);
       console.log(this.tableData)
-      axios.post("http://localhost:9000/exportExcel",(newTotalRows,this.year))
+      axios.post("http://localhost:9000/exportExcel",tableData)
       .then(res=> {
         console.log(res);
       })

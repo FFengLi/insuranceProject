@@ -1,6 +1,8 @@
 package cn.edu.guet.insuranceteam.service.impl;
 
+import cn.edu.guet.insuranceteam.bean.InsuranceSummaryModel;
 import cn.edu.guet.insuranceteam.common.ResponseData;
+import com.alibaba.excel.EasyExcel;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import cn.edu.guet.insuranceteam.bean.InsuranceList;
 import cn.edu.guet.insuranceteam.service.InsuranceListService;
@@ -30,6 +32,20 @@ public class InsuranceListServiceImpl extends ServiceImpl<InsuranceListMapper, I
 
         return ResponseData.ok(insuranceListList);
     }
+
+    @Override
+    public ResponseData summaryExportExcel(List<InsuranceSummaryModel> summaryModelList) {
+        //获取当前项目目录地址
+        String projectDir = System.getProperty("user.dir");
+        System.out.println(projectDir);
+        String fileName = projectDir+"\\保险汇总.xlsx";
+        //String fileName = TestFileUtil.getPath() + "simpleWrite" + System.currentTimeMillis() + ".xlsx";
+        //导出excel表格
+        EasyExcel.write(fileName, InsuranceSummaryModel.class).sheet().doWrite(summaryModelList);
+        return ResponseData.ok("导出成功！");
+    }
+
+
 }
 
 
