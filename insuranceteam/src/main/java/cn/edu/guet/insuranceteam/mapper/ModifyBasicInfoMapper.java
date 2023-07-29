@@ -1,8 +1,11 @@
 package cn.edu.guet.insuranceteam.mapper;
 
 import cn.edu.guet.insuranceteam.bean.ModifyBasicInfo;
+import cn.edu.guet.insuranceteam.bean.ModifyListSummaryVo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
 * @author 罗云之
@@ -13,6 +16,8 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface ModifyBasicInfoMapper extends BaseMapper<ModifyBasicInfo> {
 
+    List<ModifyListSummaryVo> getModifyListSummary(String year,String timeType);
+    ModifyListSummaryVo getModifyListSummaryTotal(String year,String timeType);
 }
 
 

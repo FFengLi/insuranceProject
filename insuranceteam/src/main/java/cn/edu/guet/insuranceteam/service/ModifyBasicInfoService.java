@@ -1,6 +1,7 @@
 package cn.edu.guet.insuranceteam.service;
 
 import cn.edu.guet.insuranceteam.bean.ModifyBasicInfo;
+import cn.edu.guet.insuranceteam.common.ResponseData;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -10,4 +11,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface ModifyBasicInfoService extends IService<ModifyBasicInfo> {
 
+    ResponseData getModifyListSummary(String year,String timeType);
 }

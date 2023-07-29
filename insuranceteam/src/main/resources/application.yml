@@ -10,5 +10,5 @@ mybatis-plus:
   mapper-locations: classpath:mapper/*Mapper.xml
 logging:
   level:
-    cn.edu.guet.insurance.mapper: DEBUG
+    cn.edu.guet.insuranceteam.mapper: DEBUG
 

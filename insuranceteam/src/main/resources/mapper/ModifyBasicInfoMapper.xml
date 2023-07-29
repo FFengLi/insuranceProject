@@ -5,27 +5,27 @@
 <mapper namespace="cn.edu.guet.insuranceteam.mapper.ModifyBasicInfoMapper">
 
     <resultMap id="BaseResultMap" type="cn.edu.guet.insuranceteam.bean.ModifyBasicInfo">
-            <id property="id" column="id" jdbcType="INTEGER"/>
-            <result property="prefecture" column="prefecture" jdbcType="VARCHAR"/>
-            <result property="county" column="county" jdbcType="VARCHAR"/>
-            <result property="modifyProjectName" column="modify_project_name" jdbcType="TIMESTAMP"/>
-            <result property="estimatedMaintainTotalCost" column="estimated_maintain_total_ cost" jdbcType="VARCHAR"/>
-            <result property="scheduledDate" column="scheduled_date" jdbcType="TIMESTAMP"/>
-            <result property="expectedCompletionTime" column="expected_completion_time" jdbcType="TIMESTAMP"/>
-            <result property="governmentInterfacer" column="government_ interfacer" jdbcType="VARCHAR"/>
-            <result property="governmentInterfacerCif" column="government_interfacer_cif" jdbcType="VARCHAR"/>
-            <result property="ourInterfacer" column="our_ interfacer" jdbcType="VARCHAR"/>
-            <result property="ourInterfacerCif" column="our_interfacer_cif" jdbcType="VARCHAR"/>
-            <result property="discussSchedule" column="discuss_schedule" jdbcType="VARCHAR"/>
-            <result property="actualCompletionTime" column="actual_completion_time" jdbcType="TIMESTAMP"/>
-            <result property="compensationCosts" column="compensation_costs" jdbcType="VARCHAR"/>
-            <result property="wireMaintainCosts" column="wire_maintain_costs" jdbcType="VARCHAR"/>
-            <result property="otherBudgetName" column="other_budget_name" jdbcType="VARCHAR"/>
-            <result property="otherBudgetId" column="other_budget_id" jdbcType="VARCHAR"/>
-            <result property="maintainBudgetName" column="maintain_budget_name" jdbcType="VARCHAR"/>
-            <result property="compensationSchedule" column="compensation_schedule" jdbcType="VARCHAR"/>
-            <result property="itemDescribe" column="item_describe" jdbcType="VARCHAR"/>
-            <result property="unresolvedResultAnalysis" column="unresolved_result_analysis" jdbcType="VARCHAR"/>
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="prefecture" column="prefecture" jdbcType="VARCHAR"/>
+        <result property="county" column="county" jdbcType="VARCHAR"/>
+        <result property="modifyProjectName" column="modify_project_name" jdbcType="TIMESTAMP"/>
+        <result property="estimatedMaintainTotalCost" column="estimated_maintain_total_ cost" jdbcType="VARCHAR"/>
+        <result property="scheduledDate" column="scheduled_date" jdbcType="TIMESTAMP"/>
+        <result property="expectedCompletionTime" column="expected_completion_time" jdbcType="TIMESTAMP"/>
+        <result property="governmentInterfacer" column="government_ interfacer" jdbcType="VARCHAR"/>
+        <result property="governmentInterfacerCif" column="government_interfacer_cif" jdbcType="VARCHAR"/>
+        <result property="ourInterfacer" column="our_ interfacer" jdbcType="VARCHAR"/>
+        <result property="ourInterfacerCif" column="our_interfacer_cif" jdbcType="VARCHAR"/>
+        <result property="discussSchedule" column="discuss_schedule" jdbcType="VARCHAR"/>
+        <result property="actualCompletionTime" column="actual_completion_time" jdbcType="TIMESTAMP"/>
+        <result property="compensationCosts" column="compensation_costs" jdbcType="VARCHAR"/>
+        <result property="wireMaintainCosts" column="wire_maintain_costs" jdbcType="VARCHAR"/>
+        <result property="otherBudgetName" column="other_budget_name" jdbcType="VARCHAR"/>
+        <result property="otherBudgetId" column="other_budget_id" jdbcType="VARCHAR"/>
+        <result property="maintainBudgetName" column="maintain_budget_name" jdbcType="VARCHAR"/>
+        <result property="compensationSchedule" column="compensation_schedule" jdbcType="VARCHAR"/>
+        <result property="itemDescribe" column="item_describe" jdbcType="VARCHAR"/>
+        <result property="unresolvedResultAnalysis" column="unresolved_result_analysis" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
@@ -37,4 +37,48 @@
         other_budget_name,other_budget_id,maintain_budget_name,
         compensation_schedule,item_describe,unresolved_result_analysis
     </sql>
+
+    <select id="getModifyListSummary" resultType="cn.edu.guet.insuranceteam.bean.ModifyListSummaryVo" parameterType="string">
+        SELECT
+            prefecture,
+            COUNT(${timeType}) AS changeCompensateAmount,
+            SUM(MONTH(${timeType}) = 1) AS januaryAmount,
+            SUM(MONTH(${timeType}) = 2) AS februaryAmount,
+            SUM(MONTH(${timeType}) = 3) AS marchAmount,
+            SUM(MONTH(${timeType}) = 4) AS aprilAmount,
+            SUM(MONTH(${timeType}) = 5) AS mayAmount,
+            SUM(MONTH(${timeType}) = 6) AS juneAmount,
+            SUM(MONTH(${timeType}) = 7) AS julyAmount,
+            SUM(MONTH(${timeType}) = 8) AS augustAmount,
+            SUM(MONTH(${timeType}) = 9) AS septemberAmount,
+            SUM(MONTH(${timeType}) = 10) AS octoberAmount,
+            SUM(MONTH(${timeType}) = 11) AS novemberAmount,
+            SUM(MONTH(${timeType}) = 12) AS decemberAmount,
+            SUM(compensation_costs) AS totalAmount
+        FROM
+            modify_basic_info
+        WHERE YEAR(${timeType}) = #{year}
+        GROUP BY
+            prefecture;
+    </select>
+    <select id="getModifyListSummaryTotal" resultType="cn.edu.guet.insuranceteam.bean.ModifyListSummaryVo" parameterType="string">
+        SELECT
+            COUNT(${timeType}) AS changeCompensateAmount,
+            SUM(MONTH(${timeType}) = 1) AS januaryAmount,
+            SUM(MONTH(${timeType}) = 2) AS februaryAmount,
+            SUM(MONTH(${timeType}) = 3) AS marchAmount,
+            SUM(MONTH(${timeType}) = 4) AS aprilAmount,
+            SUM(MONTH(${timeType}) = 5) AS mayAmount,
+            SUM(MONTH(${timeType}) = 6) AS juneAmount,
+            SUM(MONTH(${timeType}) = 7) AS julyAmount,
+            SUM(MONTH(${timeType}) = 8) AS augustAmount,
+            SUM(MONTH(${timeType}) = 9) AS septemberAmount,
+            SUM(MONTH(${timeType}) = 10) AS octoberAmount,
+            SUM(MONTH(${timeType}) = 11) AS novemberAmount,
+            SUM(MONTH(${timeType}) = 12) AS decemberAmount,
+            SUM(compensation_costs) AS totalAmount
+        FROM
+            modify_basic_info
+        WHERE YEAR(${timeType}) = #{year}
+    </select>
 </mapper>
