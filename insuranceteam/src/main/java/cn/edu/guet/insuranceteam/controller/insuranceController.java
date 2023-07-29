@@ -22,5 +22,12 @@ public class insuranceController {
         return insuranceListService.deleteInsurance(insuranceList);
     }
 
+    @PostMapping("/updateInsurance")
+    public ResponseData updateInsurance(@RequestBody InsuranceList insuranceList){
+        System.out.println("这里走了吗？");
+        return insuranceListService.updateInsurance(insuranceList);
+
+    }
+
 }
 

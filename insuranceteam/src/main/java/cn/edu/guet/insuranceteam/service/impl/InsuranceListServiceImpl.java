@@ -42,6 +42,15 @@ public class InsuranceListServiceImpl extends ServiceImpl<InsuranceListMapper, I
         else return ResponseData.fail("删除失败");
     }
 
+    @Override
+    public ResponseData updateInsurance(InsuranceList insuranceList) {
+        int result = insuranceListMapper.updateInsurance(insuranceList);
+        if (result==1){
+            return ResponseData.ok("修改成功！");
+        } else
+            return ResponseData.fail("修改失败！");
+    }
+
 
 }
 

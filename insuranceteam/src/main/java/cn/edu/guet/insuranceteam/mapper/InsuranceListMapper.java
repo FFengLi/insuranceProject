@@ -13,6 +13,10 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface InsuranceListMapper extends BaseMapper<InsuranceList> {
 
+
+    int updateInsurance(InsuranceList insuranceList);
+
+    int createInsurance(InsuranceList insuranceList);
 }
 
 

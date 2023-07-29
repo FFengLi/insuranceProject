@@ -13,4 +13,6 @@ public interface InsuranceListService extends IService<InsuranceList> {
     ResponseData createInsurance(InsuranceList insuranceList);
 
     ResponseData deleteInsurance(InsuranceList insuranceList);
+
+    ResponseData updateInsurance(InsuranceList insuranceList);
 }
