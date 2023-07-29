@@ -35,7 +35,7 @@ public class insuranceController {
     @PostMapping("/exportExcel")
     public ResponseData exportExcel(@RequestBody List<InsuranceSummaryModel> summaryModelList) {
         return insuranceListService.summaryExportExcel(summaryModelList);
-
+    }
 
     @PostMapping("/deleteInsurance")
     public ResponseData deleteInsurance(@RequestBody InsuranceList insuranceList){
