@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21145751-6601-4061-82bb-0d518aff0261" name="Changes" comment="修改功能的前端">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/insuranceteam/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/insuranceteam/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/insurancevue/.browserslistrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/insurancevue/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/insurancevue/babel.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/insurancevue/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/insurancevue/src/App.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/insurancevue/src/assets/logo.png" beforeDir="false" />
-    </list>
+    <list default="true" id="21145751-6601-4061-82bb-0d518aff0261" name="Changes" comment="修改功能" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,7 +102,7 @@
       <workItem from="1690341995152" duration="7678000" />
       <workItem from="1690415272205" duration="16742000" />
       <workItem from="1690506499164" duration="7644000" />
-      <workItem from="1690593457900" duration="1440000" />
+      <workItem from="1690593457900" duration="1761000" />
     </task>
     <task id="LOCAL-00001" summary="修改功能的后端">
       <created>1690594469191</created>
@@ -130,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690594799851</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="修改功能">
+      <created>1690595083312</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1690595083312</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,6 +163,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="修改功能的后端" />
     <MESSAGE value="修改功能的前端" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改功能的前端" />
+    <MESSAGE value="修改功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改功能" />
   </component>
 </project>
