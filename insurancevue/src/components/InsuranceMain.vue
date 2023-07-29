@@ -91,7 +91,7 @@
         <div class="button">
             <el-button type="primary" icon="el-icon-search" plain size="medium" style="margin-left: 40px">查询
             </el-button>
-            <el-button type="primary" icon="el-icon-circle-plus-outline" size="medium">保险填报</el-button>
+            <el-button type="primary" icon="el-icon-circle-plus-outline" size="medium" @click="addRouter1" >保险填报</el-button>
             <el-button type="primary" icon="el-icon-edit" size="medium">修改</el-button>
             <el-button type="primary" icon="el-icon-delete" size="medium">删除</el-button>
             <el-button type="primary" icon="el-icon-upload2" plain size="medium">导出Excel</el-button>
@@ -103,7 +103,12 @@
 <script>
 
 export default {
-    name: "InsuranceMian",
+    name: "InsuranceMain",
+    methods:{
+        addRouter1(){
+            this.$router.push("/createInsurance");
+        }
+    },
     data() {
         return {
             formInline: {
@@ -220,24 +225,20 @@ export default {
                     label: '火灾'
                 },
                 {
-                    value: '选项6',
+                    value: '选项5',
                     label: '第三方责任市政施工挖断'
                 },
                 {
-                    value: '选项7',
+                    value: '选项6',
                     label: '第三方责任市政施工剪断'
                 },
                 {
-                    value: '选项8',
+                    value: '选项7',
                     label: '第三方责任大车挂断'
                 },
                 {
-                    value: '选项5',
+                    value: '选项8',
                     label: '第三者责任其他'
-                },
-                {
-                    value: '选项5',
-                    label: '第三方责任市政施工挖断'
                 }
             ],
             types: [
