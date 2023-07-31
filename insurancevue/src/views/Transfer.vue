@@ -1,11 +1,17 @@
 <template>
     <div>
-        <el-container direction="vertical">
+        <el-container direction="vertical1">
             <el-header>
                 <Header></Header>
             </el-header>
 
         </el-container>
+      <el-container direction="vertical2">
+        <el-header>
+          <Header></Header>
+        </el-header>
+
+      </el-container>
     </div>
 
 </template>
