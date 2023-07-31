@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Transfer from "@/views/Transfer.vue";
 import Insurance from "@/views/Insurance.vue";
 import CreateInsurance from "@/components/CreateInsurance.vue";
+import InsuranceSummary from "@/views/InsuranceSummary";
 
 Vue.use(VueRouter)
 
@@ -18,7 +19,12 @@ const routes = [
     {
         path: '/createInsurance',
         component: CreateInsurance
-    }
+    },
+    {
+        path: '/insuranceSummary',
+        component: InsuranceSummary
+    },
+
 ]
 
 const router = new VueRouter({
