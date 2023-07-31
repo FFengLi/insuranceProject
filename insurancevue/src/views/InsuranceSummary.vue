@@ -12,7 +12,7 @@
     <el-button type="primary" class="searchButton" @click="GetYearSummary(value)">
       <i class="el-icon-search"></i>&nbsp;&nbsp;查询
     </el-button>
-    <el-button type="primary" plain class="exportButton" @click="ExportExcel()"><i class="el-icon-upload2"></i>导出Excel</el-button>
+    <el-button type="primary" plain id="exportButton" @click="ExportExcel()"><i class="el-icon-upload2"></i>导出Excel</el-button>
     <el-table
         class="el-table"
         :data="tableData"
@@ -91,7 +91,8 @@ export default {
       value: '所有年份',
       year:this.value,
 
-      months: [{
+      months: [
+          {
         num: '1',
         value: 'january',
       },{
@@ -303,7 +304,7 @@ export default {
   .searchButton{
     margin-left: 50px;
   }
-  .exportButton{
+  #exportButton{
     margin-left: 492px;
   }
 

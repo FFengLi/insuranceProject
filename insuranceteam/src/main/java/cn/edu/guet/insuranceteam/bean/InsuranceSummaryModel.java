@@ -6,6 +6,10 @@ import com.alibaba.excel.annotation.write.style.ColumnWidth;
 
 import java.math.BigDecimal;
 
+/**
+ * excel导出模板
+ * @author lgl
+ */
 public class InsuranceSummaryModel {
 
     @ExcelProperty(value = "地州")

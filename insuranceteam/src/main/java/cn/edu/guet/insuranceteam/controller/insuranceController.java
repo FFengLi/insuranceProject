@@ -1,5 +1,6 @@
 package cn.edu.guet.insuranceteam.controller;
 
+import cn.edu.guet.insuranceteam.bean.InsuranceDTO;
 import cn.edu.guet.insuranceteam.bean.InsuranceList;
 import cn.edu.guet.insuranceteam.bean.InsuranceSummaryModel;
 import cn.edu.guet.insuranceteam.common.ResponseData;
@@ -11,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
@@ -37,8 +37,13 @@ public class insuranceController {
         return insuranceListService.summaryExportExcel(summaryModelList);
     }
 
+    @PostMapping("/viewInsurance")
+    public ResponseData viewInsurance(@RequestBody InsuranceDTO insuranceDTO) {
+        return insuranceListService.viewInsurance(insuranceDTO);
+    }
+
     @PostMapping("/deleteInsurance")
-    public ResponseData deleteInsurance(@RequestBody InsuranceList insuranceList){
+    public ResponseData deleteInsurance(@RequestBody InsuranceList insuranceList) {
         return insuranceListService.deleteInsurance(insuranceList);
 
     }
