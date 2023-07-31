@@ -40,5 +40,51 @@
         compensation_received_time,compensation_situation_remark,IC_ledger_registration_name,
         IC_insurance_report_no,IC_estimated_reparation_amount,compensation_progress,
         insurance_remarks,create_time,update_time
+
     </sql>
+    <update id="updateInsurance" parameterType="cn.edu.guet.insuranceteam.bean.InsuranceList">
+        update t_insurance_list
+        set prefecture =#{prefecture},
+            county =#{county},
+            case_name =#{caseName},
+            case_occurrence_time=#{caseOccurrenceTime},
+            network_hierarchy=#{networkHierarchy},
+            case_progress_situation=#{caseProgressSituation},
+            reporting_reasons=#{reportingReasons},
+            case_reporter=#{caseReporter},
+            maintenance_manager=#{maintenanceManager},
+            estimated_loss_amount=#{estimatedLossAmount},
+            compensation_type=#{compensationType},
+            case_completion_confirm=#{caseCompletionConfirm},
+            insurance_content_description=#{insuranceContentDescription},
+            compensation_received_amount=#{compensationReceivedAmount},
+            compensation_received_time=#{compensationReceivedTime},
+            compensation_situation_remark=#{compensationSituationRemark},
+            IC_ledger_registration_name=#{icLedgerRegistrationName},
+            IC_insurance_report_no=#{icInsuranceReportNo},
+            IC_estimated_reparation_amount=#{icEstimatedReparationAmount},
+            compensation_progress=#{compensationProgress},
+            insurance_remarks=#{insuranceRemarks},
+            create_time=#{createTime},
+            update_time=#{updateTime}
+        where insurance_id=#{insuranceId}
+    </update>
+    <insert id="createInsurance" parameterType="cn.edu.guet.insuranceteam.bean.InsuranceList">
+        INSERT INTO t_insurance_list (insurance_id, prefecture, county, case_name,case_occurrence_time,network_hierarchy,
+                                      case_progress_situation,reporting_reasons,case_reporter,
+                                      maintenance_manager,estimated_loss_amount,compensation_type,
+                                      case_completion_confirm,insurance_content_description,compensation_received_amount,
+                                      compensation_received_time,compensation_situation_remark,IC_ledger_registration_name,
+                                      IC_insurance_report_no,IC_estimated_reparation_amount,compensation_progress,
+                                      insurance_remarks,create_time,update_time)
+        VALUES (#{insuranceId},#{prefecture},#{county},#{caseName},#{caseOccurrenceTime},#{networkHierarchy},
+                #{caseProgressSituation},#{reportingReasons},#{caseReporter},#{maintenanceManager},
+                #{estimatedLossAmount},#{compensationType},#{caseCompletionConfirm},#{insuranceContentDescription},
+                #{compensationReceivedAmount},#{compensationReceivedTime},#{compensationSituationRemark},
+                #{icLedgerRegistrationName},#{icInsuranceReportNo},#{icEstimatedReparationAmount},
+                #{compensationProgress},#{insuranceRemarks},#{createTime},#{updateTime})
+    </insert>
+
+
+
 </mapper>
